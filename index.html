@@ -11,6 +11,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            .mySlides {display: none;}
+            
+            .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            
+            .dot.active {background-color: #717171;}
+            
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+            
+            @-webkit-keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
+            
+            @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}    
+            }
+        </style>
 	</head>
 	<body class="is-preload">
 
@@ -47,11 +79,12 @@
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<a href="#" class="image"><img src="images/FIMQ3442.JPG" style="max-height: 1920px; max-width: 1080px;" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Introduction</h2>
-									<p>I am a 3rd-year undergrad computer science student at UCLA with particular interest in software engineering, game design/development, and machine learning. My proficiencies lie in the following languages: C++, Java, C/POSIX, Python, and bash. I am very familiar with using Git version control, as well as GNU/Linux.</p>
+									<p>I am a 3rd-year undergrad computer science student at UCLA with particular interest in software engineering, game design/development, and machine learning. My proficiencies lie in the following languages: C++, Java, C/POSIX, Python, and bash. I am accustomed to using Git version control, as well as GNU/Linux.</p>
+                                    <p>My goal is to continue to acquire a deep understanding of best practices in software design and construction, and become in tune with all of the components that constitute a coherent system, so as to apply them to my subjects of interest.</p>
 									<!--<ul class="actions">
 										<li><a href="projects.html" class="button">Learn more</a></li>
 									</ul>-->
@@ -59,11 +92,29 @@
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
+                                <!--<a href="#" class="image"><img src="images/royce.jpg" alt="" data-position="top center" /></a>-->
 								<div class="inner">
-									<h2>Academic Background/Completed Coursework</h2>
-									<p> [fluff] </p>
+									<h2>Completed Coursework</h2>
+									<ul>
+                                        <li style="font-weight: bold; list-style: none;">CS Coursework</li>
+                                        <li>Intro to Computer Science (2 courses; both in C++)</li>
+                                        <li>Intro to Computer Organization (low-level C, basic x86-64 assembly)</li>
+                                        <li>Software Construction Laboratory (C programming, Linux bash, Git version control)</li>
+                                        <li>Operating System Principles</li>
+                                        <li>Logic Design of Digital Systems</li>
+                                    </ul>
+                                    <ul>
+                                        <li style="font-weight: bold; list-style: none;">Other Coursework</li>
+                                        <li>Physics Laboratory (Electricity & Magnetism; using Arduinos and Python for data collection and analysis)</li>
+                                        <li>Physics (3 courses: Mechanics; Electricity & Magnetism; Electrodynamics, Optics, & Special Relativity)</li>
+                                        <li>Integration and Infinite Series</li>
+                                        <li>Calculus of Several Variables (2 courses)</li>
+                                        <li>Linear Algebra</li>
+                                        <li>Differential Equations</li>
+                                        <li>Discrete Structures</li>
+                                        <li>Engineering Design: Internet of Things (Sensor Tile IoT research under Dr. William Kaiser)</li>
+                                    </ul>
 									<!--<ul class="actions">
 										<li><a href="projects.html" class="button">Learn more</a></li>
 									</ul>-->
@@ -71,11 +122,46 @@
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<!--<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>-->
+                            <img class="mySlides fade image" src="images/IMG_3145.jpg" />
+                            <img class="mySlides fade image" src="images/IMG_3136.jpg" data-position="25% 25%" />
+                            <img class="mySlides fade image" src="images/IMG_3353.jpg" data-position="25% 25%" />
+                            <br>
+                            <div style="text-align: center; position: absolute; z-index: auto; bottom: 5px; left: 14%">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            
+                            <script>
+                                var slideIndex = 0;
+                                showSlides();
+
+                                function showSlides() {
+                                    var i;
+                                    var slides = document.getElementsByClassName("mySlides");
+                                    var dots = document.getElementsByClassName("dot");
+                                    for (i = 0; i < slides.length; i++) {
+                                        slides[i].style.display = "none";  
+                                    }
+                                    slideIndex++;
+                                    if (slideIndex > slides.length) {slideIndex = 1}    
+                                    for (i = 0; i < dots.length; i++) {
+                                        dots[i].className = dots[i].className.replace(" active", "");
+                                    }
+                                    slides[slideIndex-1].style.display = "block";  
+                                    dots[slideIndex-1].className += " active";
+                                    setTimeout(showSlides, 4000); // Change image every 2 seconds
+                                }
+                            </script>
 							<div class="content">
 								<div class="inner">
 									<h2>Personal/Hobbies</h2>
-									<p> [fluff] </p>
+									<p>To explore my passion for computer science beyond what is offered by my classes, I work on personal projects to gain practical experience with programming and game designing. You can find some of the things I have been working on in my Github linked at the bottom of the page.</p>
+                                    
+                                    <p>I am also an enthusiast of the video game genre of fighting games, and its community, the fighting game community (colloquially "FGC"). The intricate psychological exchanges that take place between two players, as well as the continuous quest for self-improvement, have always been intriguing to me. I have fond appreciation for the strong sense of community and the boundless opportunities to bond with new people.</p>
+                                    
+                                    <p>As such, I felt it necessary to replicate that in my local community. I am one of the founders of an on-campus student org dedicated to the FGC, called the <a href="https://community.ucla.edu/studentorg/4027">Fighting Game Community at UCLA.</a> I am the head organizer of events, and run the <a href="https://www.youtube.com/channel/UChsTcUW9n0WDDEN7ajl1iuA">YouTube channel</a> where replays of past events can be visited.</p>
 									<!--<ul class="actions">
 										<li><a href="projects.html" class="button">Learn more</a></li>
 									</ul>-->
@@ -88,7 +174,7 @@
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Projects</h2>
-							<p>Below are some of the projects I have been working on:</p>
+                            <p>Spotlighted below are two of the noteworthy projects I have been working on. Use the <strong>Learn More</strong> button for details.</p>
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-code"></span>
@@ -98,7 +184,7 @@
                                     <li><a href="https://kurushiid-stock-dashboard.herokuapp.com"><b>Web App</b> (Heroku)</a></li>
                                     <li><a href="https://github.com/kurushiidrive/lstm-stock-dashboard_source-code"><b>Source Code Repo</b> (Github)</a></li>
                                     </ul>
-                                    <p>A simple Python web app built using the Dash framework that uses a deep learning model trained on historic stock price data to make predictions on what future closing prices of that stock will be. I made it to become more comfortable working with the Keras library for deep learning, as well as gain more practical experience with Python. Currently only AMD stock data are used.</p>
+                                    <p>A simple Python web app built using the Dash framework that uses a deep learning model trained on historic stock price data to make predictions on what future closing prices of that stock will be. I made it to become more comfortable working with the Keras library for deep learning, as well as gain more practical experience with Python. Currently only AMD stock data are used. I used <a href="https://heroku.com">Heroku</a> to deploy the app to the web.</p>
 								</section>
                                 <section>
                                     <span class="icon solid major fa-gamepad"></span>
